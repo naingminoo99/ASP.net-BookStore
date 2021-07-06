@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="UserNoLogin.master.cs" Inherits="UserNoLogin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <%--FormStyles--%>
+    <!-- Required meta tags-->
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <!-- Icons font CSS-->
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" media="all" rel="stylesheet">
+    <!-- Font special for pages-->
+    <%--Bootstrapstylesheet--%>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet">
+    <style>
+        .itemblock {
+    display: block;
+    width: auto;
+    background-color: dimgrey;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+    margin: 7px 0px 7px 0px;
+    padding: 0px 0px 10px 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}   nav .btn {
+            margin-left:10px;
+            margin-top:10px;
+            margin-bottom:10px;
+        }
+    footer{
+        padding:10px;
+        color:white;
+    }
+    footer a{
+        padding-left:10px;
+    }
+    .wrapper {
+        padding-bottom:100px;
+    }
+    
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+            <div>
+            <%--Navigation bar--%>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand"><i class="fa fa-book"></i> Book Store</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="btn btn-outline-primary" href="Default.aspx"><i class="fa fa-home"></i> Home</a>
+            </li>              
+            <li class="nav-item">
+            <a class="btn btn-warning" href="LoginForm.aspx"> Log In </a>
+            </li>
+            <li class="nav-item">
+            <a class="btn btn-info" href="Register.aspx"> Register </a>
+            </li>
+            </ul>
+            </div>
+            </nav>
+            </div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+    </form>
+        <%--Footer--%>
+    <footer class="footer bg-dark">
+      <div class="container text-center">
+        <p>
+            Contact Us Via :
+            <a href="https://www.facebook.com/naingminoo.99"target="_blank" rel="noopener noreferrer"><i class="fa fa-2x fa-facebook-official"></i></a>
+            <a href="https://twitter.com/Naing_Min_Oo"target="_blank" rel="noopener noreferrer"><i class="fa fa-2x fa-twitter"></i></a>
+            <a href="https://www.instagram.com/naingminoo99"target="_blank" rel="noopener noreferrer"><i class="fa fa-2x fa-instagram"></i></a>
+            <a href="mailto:naingminoo.ryan@gmail.com"><i class="fa fa-2x fa-envelope"></i></a>
+        </p>        
+        <small class="text-muted"><small>Copyright © 2019 Naing Min oo </small></small>
+
+      </div>
+    </footer>
+</body>
+</html>

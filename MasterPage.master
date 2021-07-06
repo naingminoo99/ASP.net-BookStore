@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!doctype html>
+<html lang="en">
+<head runat="server">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <style>
+        .card{
+            display:block;
+            text-align:center;
+            width:50%;
+            margin:auto;
+            padding:20px;
+            height:100%;
+           background-color:antiquewhite;
+
+        }
+        nav{
+            margin-bottom:30px;
+        }
+    </style>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form2" runat="server">
+
+<%--Navigation bar--%>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Book Store</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="Default.aspx">Home <span class="sr-only">(current)</span></a>
+        </li>    
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Author</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="AddAuthor.aspx">Add Author</a>
+            <a class="dropdown-item" href="UpdateAuthor.aspx">Update Author</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Books</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="AddBook.aspx">Add Books</a>
+            <a class="dropdown-item" href="UpdateBook.aspx">Update Books</a>
+          </div>
+        </li>
+
+        </ul>
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <%--<asp:LinkButton ID="btnLogin" runat="server" class="nav-link" OnClick="btnLogin_Click">Login</asp:LinkButton>--%>          
+            <asp:LinkButton ID="btnLogOut" runat="server" class="nav-link" OnClick="btnLogOut_Click" >LogOut</asp:LinkButton>          
+        &nbsp;</li>
+        <li class="nav-item float-right">
+            <asp:Label class="nav-link" aria-disabled="true" ID="lblUser" runat="server" Text=""></asp:Label>
+        </li>
+      </ul>
+    </div>
+  </nav>
+        <div class="card">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+        </div>
+    </form>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    </body>
+</html>
+
+
+

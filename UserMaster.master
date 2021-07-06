@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="UserMaster.master.cs" Inherits="UserMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <%--FormStyles--%>
+    <!-- Required meta tags-->
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <!-- Icons font CSS-->
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" media="all" rel="stylesheet">
+    <!-- Font special for pages-->
+    <%--Bootstrapstylesheet--%>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all">
+    <style>
+        nav .btn {
+            margin-left:10px;
+            margin-top:10px;
+            margin-bottom:10px;
+
+        }
+        footer{
+            padding:10px;
+            color:white;
+        }
+        footer a{
+            padding-left:10px;
+        }
+        .wrapper {
+            padding-bottom:100px;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+<form id="form1" runat="server">
+<div>
+<%--Navigation bar--%>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand"><i class="fa fa-book"></i> Book Store</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+            
+          <li class="nav-item">
+              <a class="btn btn-outline-primary" href="ShopBook.aspx"><i class="fa fa-book"></i> Shop</a>
+            </li>        
+            <%--Cart Tweaks--%>        
+          <li class="nav-item dropdown">
+                <a class="btn btn-outline-info dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-shopping-cart"></i>
+                <asp:Label ID="lblCartCount" runat="server" Text="( 0 )"></asp:Label>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <asp:LinkButton ID="lblPayment" Text="Go to Cart" class="dropdown-item"  runat="server" Visible="true" OnClick="lblPayment_Click"></asp:LinkButton>
+                </div>
+          </li>
+            
+ 
+
+            <%--Acc Tweaks--%>        
+            <li class="nav-item dropdown">
+            <a class="btn btn-outline-success dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle"></i>
+            <asp:Label ID="lblUser" runat="server" Text=""></asp:Label>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="OrderHistory.aspx">Order History <i class="fa fa-history"></i></a>
+            <a class="dropdown-item" href="ManageAccount.aspx">Manage Account <i class="fa fa-edit"></i></a>
+            </div>
+            </li>
+          
+            <li class="nav-item">
+            <asp:LinkButton ID="lblLogout" Text="Log Out" class="btn btn-outline-danger" OnClientClick="return confirm('Are you sure ?')" runat="server" OnClick="lblLogout_Click"></asp:LinkButton>          
+            </li>  
+        </ul>
+    </div>
+  </nav>
+</div>
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+
+    <%--Footer--%>
+    <footer class="footer bg-dark">
+      <div class="container text-center">
+        <p>
+            Contact Us Via :
+            <a href="https://www.facebook.com/naingminoo.99"target="_blank" rel="noopener noreferrer"><i class="fa fa-2x fa-facebook-official"></i></a>
+            <a href="https://twitter.com/Naing_Min_Oo"target="_blank" rel="noopener noreferrer"><i class="fa fa-2x fa-twitter"></i></a>
+            <a href="https://www.instagram.com/naingminoo99"target="_blank" rel="noopener noreferrer"><i class="fa fa-2x fa-instagram"></i></a>
+            <a href="mailto:naingminoo.ryan@gmail.com"><i class="fa fa-2x fa-envelope"></i></a>
+        </p>        
+        <small class="text-muted"><small>Copyright © 2019 Naing Min oo </small></small>
+
+      </div>
+    </footer>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
